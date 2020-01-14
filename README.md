@@ -1,7 +1,7 @@
 # goflatten
 [![Go Report Card](https://goreportcard.com/badge/github.com/ShiraazMoollatjie/goflatten?style=flat-square)](https://goreportcard.com/report/github.com/ShiraazMoollatjie/goflatten)
 [![Go Doc](https://img.shields.io/badge/godoc-reference-blue.svg?style=flat-square)](http://godoc.org/github.com/ShiraazMoollatjie/goflatten)
-[![Build status](https://ci.appveyor.com/api/projects/status/qiyndko2krd4ltep?svg=true)](https://ci.appveyor.com/project/ShiraazMoollatjie/goflatten)
+[![Build status](https://ci.appveyor.com/api/projects/status/v0x22haovyo1y396/branch/master?svg=true)](https://ci.appveyor.com/project/ShiraazMoollatjie/goflatten/branch/master)
 
 
 > `goflatten` is a very small utility that flattens folders into a single file.
