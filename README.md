@@ -46,11 +46,14 @@ goflatten
 
 The following flags exist for `goflatten`:
 
+- **dryRun** - If set to `false`, `goflatten` will physically move nested files to the root directory. This is set to `true` by default.
+
 - **rootDir** - Specifies the starting root directory. By default, the current working directory is the starting directory.
+
+- **skipDupes** - If set to `true`, duplicate files will be overwritten when moving them to the root directory. By default, this is set to `false`.
 
 - **skipHidden** - If set to `false`, hidden files will be moved to the root directory. By default, this is set to `true`.
 
-- **dryRun** - If set to `false`, `goflatten` will physically move nested files to the root directory. This is set to `true` by default.
 
 
 
