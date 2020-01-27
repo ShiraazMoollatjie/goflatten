@@ -44,5 +44,8 @@ func moveFile(old, new string, dry bool) error {
 
 func main() {
 	flag.Parse()
-	filepath.Walk(*rootDir, flattenDirectories)
+	err := filepath.Walk(*rootDir, flattenDirectories)
+	if err != nil {
+		panic(err)
+	}
 }
