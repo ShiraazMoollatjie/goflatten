@@ -3,10 +3,7 @@
 [![Go Doc](https://img.shields.io/badge/godoc-reference-blue.svg?style=flat-square)](http://godoc.org/github.com/ShiraazMoollatjie/goflatten)
 [![Build status](https://ci.appveyor.com/api/projects/status/v0x22haovyo1y396/branch/master?svg=true)](https://ci.appveyor.com/project/ShiraazMoollatjie/goflatten/branch/master)
 
-
-> `goflatten` is a very small utility that flattens folders into a single file.
-
-`goflatten` is a utility that flattens a nested directory into a flat one. 
+> `goflatten` is a utility that flattens a nested directory of files into a flat one. 
 
 For example, suppose that you have this structure:
 
