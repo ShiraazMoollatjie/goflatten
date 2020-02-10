@@ -10,7 +10,6 @@ import (
 )
 
 var rootDir = flag.String("rootDir", ".", "The root directory to start from.")
-var skipHidden = flag.Bool("skipHidden", true, "True if hidden files and directories should be skipped.")
 var skipDupes = flag.Bool("skipDupes", true, "True if duplicate files should be skipped.")
 var dryRun = flag.Bool("dryRun", true, "A dryrun prints out all the file moves instead of actually moving them.")
 
