@@ -11,7 +11,7 @@ import (
 
 var rootDir = flag.String("rootDir", ".", "The root directory to start from.")
 var skipHidden = flag.Bool("skipHidden", true, "True if hidden files and directories should be skipped.")
-var skipDupes = flag.Bool("skipDupes", false, "Overwrite duplicate files.")
+var skipDupes = flag.Bool("skipDupes", true, "True if duplicate files should be skipped.")
 var dryRun = flag.Bool("dryRun", true, "A dryrun prints out all the file moves instead of actually moving them.")
 
 var dupes = make(map[string]bool)
@@ -26,21 +26,25 @@ func flattenDirectories(path string, info os.FileInfo, _ error) error {
 	}
 	np := fmt.Sprintf("%s%c%s", *rootDir, os.PathSeparator, info.Name())
 
-	checkForDupes(np)
+	if maybeSkipDupes(np) {
+		return nil
+	}
 
 	return moveFile(path, np, *dryRun)
 }
 
-func checkForDupes(newPath string) {
-	if *skipDupes {
-		return
+// maybeSkipDupes returns true if the newPath should be skipped.
+func maybeSkipDupes(newPath string) bool {
+	_, ok := dupes[newPath]
+	if ok {
+		log.Printf("WARNING: Duplicate file %s found.\n", newPath)
+		if *skipDupes {
+			return true
+		}
 	}
 
-	if dupes[newPath] {
-		log.Printf("WARNING: Duplicate file %s found.\n", newPath)
-	} else {
-		dupes[newPath] = true
-	}
+	dupes[newPath] = true
+	return false
 }
 
 func moveFile(old, new string, dry bool) error {
